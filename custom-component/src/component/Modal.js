@@ -43,6 +43,8 @@ const ModalButton = styled.button`
   height: 50px;
   background: navy;
   border-radius: 50px;
+  border: none;
+  font-weight: bold;
   color: white;
 
   > .ModalFont {

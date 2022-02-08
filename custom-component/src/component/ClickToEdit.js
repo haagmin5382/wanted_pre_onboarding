@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const ClickToEditContainer = styled.div`
   text-align: center;
@@ -17,26 +17,34 @@ const ClickToEditContainer = styled.div`
 `;
 
 function ClickToEdit() {
+  const inputValue = useRef(null);
   const [name, setName] = useState("김코딩");
   const [age, setAge] = useState("20");
 
   const [textName, setTextName] = useState(name);
   const [textAge, setTextAge] = useState(age);
   return (
-    <div
-      onClick={() => {
-        setTextName(name);
-        setTextAge(age);
-      }}
-    >
+    <div>
       <ClickToEditContainer>
         <div className="containerText">
           이름
-          <input onChange={(e) => setName(e.target.value)} value={name}></input>
+          <input
+            onBlur={() => {
+              setTextName(name);
+            }}
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+          ></input>
         </div>
         <div className="containerText">
           나이
-          <input onChange={(e) => setAge(e.target.value)} value={age}></input>
+          <input
+            onBlur={() => {
+              setTextAge(age);
+            }}
+            onChange={(e) => setAge(e.target.value)}
+            value={age}
+          ></input>
         </div>
         <div className="containerText">
           이름 {textName} 나이 {textAge}
