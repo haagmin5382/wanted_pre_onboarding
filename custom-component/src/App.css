@@ -1,0 +1,13 @@
+.box {
+  width: 50vw;
+  height: 30vh;
+  border: 2px solid silver;
+  border-radius: 10px;
+  margin: 2rem auto;
+  box-shadow: 1px 1px 1px silver;
+  /* margin-top: 5%; */
+}
+.text {
+  margin: 1%;
+  font-weight: bold;
+}
